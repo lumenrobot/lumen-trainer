@@ -12,23 +12,11 @@ databaseChangeLog:
         - sql:
             "CREATE TYPE chatactor AS enum ('CLIENT', 'ASSISTANT')"
   - changeSet:
-      id: locale
-      author: ceefour
-      changes:
-        - sql:
-            "CREATE TYPE locale AS enum ('en-US', 'id-ID')"
-  - changeSet:
       id: emotionkind
       author: ceefour
       changes:
         - sql:
             "CREATE TYPE emotionkind AS enum ('NEUTRAL', 'JOY', 'TRUST', 'FEAR', 'SURPRISE', 'SADNESS', 'DISGUST', 'ANGER', 'ANTICIPATION')"
-  - changeSet:
-      id: timezone
-      author: ceefour
-      changes:
-        - sql:
-            "CREATE TYPE timezone AS enum ('UTC', 'Asia/Jakarta')"
   - changeSet:
       id: sampleconversation
       author: ceefour
@@ -52,7 +40,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: timezone
-                  type: timezone
+                  type: varchar(255)
                   defaultValue: Asia/Jakarta
                   constraints:
                     nullable: false
@@ -79,7 +67,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: inlanguage
-                  type: locale
+                  type: varchar(5)
                   defaultValue: id-ID
                   constraints:
                     nullable: false
@@ -135,7 +123,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: timezone
-                  type: timezone
+                  type: varchar(255)
                   defaultValue: Asia/Jakarta
                   constraints:
                     nullable: false
@@ -152,12 +140,12 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: inlanguage
-                  type: locale
+                  type: varchar(5)
                   defaultValue: id-ID
                   constraints:
                     nullable: false
               - column:
-                  name: text
+                  name: bodytext
                   type: text
         - createIndex:
             indexName: ik_samplemessage_conversation_id
@@ -186,3 +174,24 @@ databaseChangeLog:
             referencedTableName: sampleconversation
             referencedColumnNames: id
             onDelete: CASCADE
+  - changeSet:
+      id: casestatus
+      author: ceefour
+      changes:
+        - sql:
+            "CREATE TYPE casestatus AS enum ('NEED_ASSISTANT_RESPONSE', 'NEED_CLIENT_RESPONSE', 'ASSISTANT_RESPONDED', 'RESOLVED')"
+        - addColumn:
+            schemaName: lumen
+            tableName: sampleconversation
+            columns:
+              name: casestatus
+              type: casestatus
+              defaultValue: NEED_ASSISTANT_RESPONSE
+              constraints:
+                nullable: false
+        - createIndex:
+            indexName: ik_sampleconversation_casestatus
+            schemaName: lumen
+            tableName: sampleconversation
+            columns:
+              - name: casestatus

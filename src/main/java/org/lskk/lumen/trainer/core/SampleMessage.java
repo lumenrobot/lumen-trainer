@@ -1,11 +1,13 @@
 package org.lskk.lumen.trainer.core;
 
-import org.hibernate.annotations.Type;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.Parameter;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.lskk.lumen.core.EmotionKind;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.io.Serializable;
 
 /**
@@ -27,13 +29,15 @@ public class SampleMessage implements Serializable {
     private DateTime creationTime;
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTimeZoneAsString")
     private DateTimeZone timeZone;
-    @Enumerated(EnumType.STRING)
+    @Type(type = "org.jadira.usertype.corejava.PersistentEnumAsPostgreSQLEnum",
+        parameters = {@Parameter(name = "enumClass", value = "org.lskk.lumen.core.EmotionKind")})
     private EmotionKind emotionKind;
-    @Enumerated(EnumType.STRING)
+    @Type(type = "org.jadira.usertype.corejava.PersistentEnumAsPostgreSQLEnum",
+            parameters = {@Parameter(name = "enumClass", value = "org.lskk.lumen.trainer.core.ChatActor")})
     private ChatActor actor;
     private String inLanguage;
     @Column(columnDefinition = "text")
-    private String text;
+    private String bodyText;
 
     public Long getId() {
         return id;
@@ -89,5 +93,29 @@ public class SampleMessage implements Serializable {
 
     public void setTimeZone(DateTimeZone timeZone) {
         this.timeZone = timeZone;
+    }
+
+    public String getBodyText() {
+        return bodyText;
+    }
+
+    public void setBodyText(String bodyText) {
+        this.bodyText = bodyText;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (null == creationTime) {
+            setCreationTime(new DateTime());
+        }
+        if (null == timeZone) {
+            setTimeZone(DateTimeZone.forID("Asia/Jakarta"));
+        }
+        if (null == emotionKind) {
+            setEmotionKind(EmotionKind.NEUTRAL);
+        }
+        if (null == inLanguage) {
+            setInLanguage("id-ID");
+        }
     }
 }

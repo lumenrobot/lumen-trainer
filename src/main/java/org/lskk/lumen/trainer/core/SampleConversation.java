@@ -1,11 +1,13 @@
 package org.lskk.lumen.trainer.core;
 
-import org.hibernate.annotations.Type;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.Parameter;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.lskk.lumen.core.Gender;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +27,17 @@ public class SampleConversation implements Serializable {
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTimeZoneAsString")
     private DateTimeZone timeZone;
     private String clientName;
-    @Enumerated(EnumType.STRING)
+    @Type(type = "org.jadira.usertype.corejava.PersistentEnumAsPostgreSQLEnum",
+            parameters = {@Parameter(name = "enumClass", value = "org.lskk.lumen.core.Gender")})
     private Gender clientGender;
     private Short clientAge;
-    @Enumerated(EnumType.STRING)
+    @Type(type = "org.jadira.usertype.corejava.PersistentEnumAsPostgreSQLEnum",
+            parameters = {@org.hibernate.annotations.Parameter(name = "enumClass", value = "org.lskk.lumen.trainer.core.ChatActor")})
     private ChatActor initiator;
     private String inLanguage;
+    @Type(type = "org.jadira.usertype.corejava.PersistentEnumAsPostgreSQLEnum",
+            parameters = {@Parameter(name = "enumClass", value = "org.lskk.lumen.trainer.core.CaseStatus")})
+    private CaseStatus caseStatus;
 
     @OneToMany(mappedBy = "conversation")
     private List<SampleMessage> messages = new ArrayList<>();
@@ -106,4 +113,32 @@ public class SampleConversation implements Serializable {
     public void setTimeZone(DateTimeZone timeZone) {
         this.timeZone = timeZone;
     }
+
+    public CaseStatus getCaseStatus() {
+        return caseStatus;
+    }
+
+    public void setCaseStatus(CaseStatus caseStatus) {
+        this.caseStatus = caseStatus;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (null == creationTime) {
+            setCreationTime(new DateTime());
+        }
+        if (null == timeZone) {
+            setTimeZone(DateTimeZone.forID("Asia/Jakarta"));
+        }
+        if (null == initiator) {
+            setInitiator(ChatActor.CLIENT);
+        }
+        if (null == inLanguage) {
+            setInLanguage("id-ID");
+        }
+        if (null == caseStatus) {
+            setCaseStatus(CaseStatus.NEED_ASSISTANT_RESPONSE);
+        }
+    }
+
 }
