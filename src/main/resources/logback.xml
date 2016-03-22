@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="15 seconds">
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <logger name="org.soluvas" level="DEBUG"/>
+    <logger name="com.soluvas" level="DEBUG"/>
+    <logger name="id" level="DEBUG"/>
+    <logger name="org.lskk" level="DEBUG"/>
+    <logger name="com.hendyirawan" level="DEBUG"/>
+    <logger name="org.apache.camel" level="INFO"/>
+    <logger name="org.apache.camel.impl.ProducerCache" level="INFO"/>
+    <logger name="org.apache.camel.component.rabbitmq" level="DEBUG"/>
+    <logger name="org.apache.camel.component.rabbitmq.reply.ReplyManagerSupport" level="INFO"/>
+    <logger name="facebook4j" level="INFO"/>
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <logger name="org.hibernate.type" level="INFO"/>
+    <logger name="org.hibernate.tool.hbm2ddl" level="DEBUG"/>
+    <logger name="org.springframework.web.servlet.mvc.method.annotation" level="DEBUG"/>
+    <logger name="org.springframework.web.client" level="DEBUG"/>
+    <logger name="org.apache.http.client" level="DEBUG"/>
+    <logger name="org.scribe" level="DEBUG"/>
+    <logger name="org.drools" level="DEBUG"/>
+    <logger name="org.kie" level="DEBUG"/>
+</configuration>
