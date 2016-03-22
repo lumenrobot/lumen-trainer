@@ -1,0 +1,188 @@
+databaseChangeLog:
+  - changeSet:
+      id: gender
+      author: ceefour
+      changes:
+        - sql:
+            "CREATE TYPE gender AS enum ('UNKNOWN', 'MALE', 'FEMALE')"
+  - changeSet:
+      id: chatactor
+      author: ceefour
+      changes:
+        - sql:
+            "CREATE TYPE chatactor AS enum ('CLIENT', 'ASSISTANT')"
+  - changeSet:
+      id: locale
+      author: ceefour
+      changes:
+        - sql:
+            "CREATE TYPE locale AS enum ('en-US', 'id-ID')"
+  - changeSet:
+      id: emotionkind
+      author: ceefour
+      changes:
+        - sql:
+            "CREATE TYPE emotionkind AS enum ('NEUTRAL', 'JOY', 'TRUST', 'FEAR', 'SURPRISE', 'SADNESS', 'DISGUST', 'ANGER', 'ANTICIPATION')"
+  - changeSet:
+      id: timezone
+      author: ceefour
+      changes:
+        - sql:
+            "CREATE TYPE timezone AS enum ('UTC', 'Asia/Jakarta')"
+  - changeSet:
+      id: sampleconversation
+      author: ceefour
+      changes:
+        - createTable:
+            schemaName: lumen
+            tableName: sampleconversation
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: creationtime
+                  type: timestamp with time zone
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: timezone
+                  type: timezone
+                  defaultValue: Asia/Jakarta
+                  constraints:
+                    nullable: false
+              - column:
+                  name: clientname
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: clientgender
+                  type: gender
+                  constraints:
+                    nullable: false
+              - column:
+                  name: clientage
+                  type: smallint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: initiator
+                  type: chatactor
+                  defaultValue: CLIENT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: inlanguage
+                  type: locale
+                  defaultValue: id-ID
+                  constraints:
+                    nullable: false
+        - createIndex:
+            indexName: ik_sampleconversation_creationtime
+            schemaName: lumen
+            tableName: sampleconversation
+            columns:
+              - name: creationtime
+        - createIndex:
+            indexName: ik_sampleconversation_clientgender
+            schemaName: lumen
+            tableName: sampleconversation
+            columns:
+              - name: clientgender
+        - createIndex:
+            indexName: ik_sampleconversation_initiator
+            schemaName: lumen
+            tableName: sampleconversation
+            columns:
+              - name: initiator
+        - createIndex:
+            indexName: ik_sampleconversation_inlanguage
+            schemaName: lumen
+            tableName: sampleconversation
+            columns:
+              - name: inlanguage
+  - changeSet:
+      id: samplemessage
+      author: ceefour
+      changes:
+        - createTable:
+            schemaName: lumen
+            tableName: samplemessage
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: conversation_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: creationtime
+                  type: timestamp with time zone
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: timezone
+                  type: timezone
+                  defaultValue: Asia/Jakarta
+                  constraints:
+                    nullable: false
+              - column:
+                  name: emotionkind
+                  type: emotionkind
+                  defaultValue: NEUTRAL
+                  constraints:
+                    nullable: false
+              - column:
+                  name: actor
+                  type: chatactor
+                  constraints:
+                    nullable: false
+              - column:
+                  name: inlanguage
+                  type: locale
+                  defaultValue: id-ID
+                  constraints:
+                    nullable: false
+              - column:
+                  name: text
+                  type: text
+        - createIndex:
+            indexName: ik_samplemessage_conversation_id
+            schemaName: lumen
+            tableName: samplemessage
+            columns:
+              - name: conversation_id
+        - createIndex:
+            indexName: ik_samplemessage_creationtime
+            schemaName: lumen
+            tableName: samplemessage
+            columns:
+              - name: creationtime
+        - createIndex:
+            indexName: ik_samplemessage_actor
+            schemaName: lumen
+            tableName: samplemessage
+            columns:
+              - name: actor
+        - addForeignKeyConstraint:
+            constraintName: fk_samplemessage_conversation_id
+            baseTableSchemaName: lumen
+            baseTableName: samplemessage
+            baseColumnNames: conversation_id
+            referencedTableSchemaName: lumen
+            referencedTableName: sampleconversation
+            referencedColumnNames: id
+            onDelete: CASCADE
