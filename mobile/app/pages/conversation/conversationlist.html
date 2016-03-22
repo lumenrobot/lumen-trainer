@@ -8,11 +8,10 @@
 <ion-content>
   <ion-list>
     <button ion-item *ngFor="#item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.clientGender == 'MALE' ? 'man' : 'woman'" item-left></ion-icon>
+      <ion-icon [name]="item.clientGender == 'MALE' ? 'man' : 'woman'"
+        [style]="'color: ' + (item.clientGender == 'MALE' ? 'blue' : 'magenta')" item-left></ion-icon>
       {{item.clientName}} {{item.clientAge}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
+      <ion-badge item-right [hidden]="item.caseStatus != 'NEED_ASSISTANT_RESPONSE'">1</ion-badge>
     </button>
   </ion-list>
   <div *ngIf="selectedItem" padding>

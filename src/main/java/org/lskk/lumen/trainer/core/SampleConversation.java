@@ -8,6 +8,7 @@ import org.lskk.lumen.core.Gender;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
+import javax.persistence.OrderBy;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class SampleConversation implements Serializable {
     private CaseStatus caseStatus;
 
     @OneToMany(mappedBy = "conversation")
+    @OrderBy("creationTime ASC")
     private List<SampleMessage> messages = new ArrayList<>();
 
     public Long getId() {
