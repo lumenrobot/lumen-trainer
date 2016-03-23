@@ -6,6 +6,10 @@ package org.lskk.lumen.trainer.core;
  */
 public enum SentencePurpose {
     /**
+     * Make it easier for R/Spark/H2O that doesn't support NULL very well.
+     */
+    UNKNOWN,
+    /**
      * Declarative sentences make a statement to relay information or ideas. They are punctuated with a simple period. Formal essays or reports are composed almost entirely of declarative sentences.
      *
      * <p>Examples of Declarative Sentences:</p>

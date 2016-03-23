@@ -10,7 +10,7 @@ import {ConversationListPage} from './pages/conversation/conversation';
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 class MyApp {
-  rootPage: any = GettingStartedPage;
+  rootPage: any = ConversationListPage;
   pages: Array<{title: string, component: any}>
 
   constructor(private app: IonicApp, private platform: Platform) {
@@ -18,9 +18,9 @@ class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Getting Started', component: GettingStartedPage },
-      { title: 'List', component: ListPage },
-      { title: 'Conversations', component: ConversationListPage }
+      { title: 'Conversations', component: ConversationListPage },
+    //   { title: 'Getting Started', component: GettingStartedPage },
+    //   { title: 'List', component: ListPage },
     ];
 
   }

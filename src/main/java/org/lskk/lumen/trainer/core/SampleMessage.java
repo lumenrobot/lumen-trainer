@@ -38,6 +38,9 @@ public class SampleMessage implements Serializable {
     private String inLanguage;
     @Column(columnDefinition = "text")
     private String bodyText;
+    @Type(type = "org.jadira.usertype.corejava.PersistentEnumAsPostgreSQLEnum",
+            parameters = {@Parameter(name = "enumClass", value = "org.lskk.lumen.trainer.core.SentencePurpose")})
+    private SentencePurpose sentencePurpose;
 
     public Long getId() {
         return id;
@@ -103,6 +106,14 @@ public class SampleMessage implements Serializable {
         this.bodyText = bodyText;
     }
 
+    public SentencePurpose getSentencePurpose() {
+        return sentencePurpose;
+    }
+
+    public void setSentencePurpose(SentencePurpose sentencePurpose) {
+        this.sentencePurpose = sentencePurpose;
+    }
+
     @PrePersist
     public void prePersist() {
         if (null == creationTime) {
@@ -116,6 +127,9 @@ public class SampleMessage implements Serializable {
         }
         if (null == inLanguage) {
             setInLanguage("id-ID");
+        }
+        if (null == sentencePurpose) {
+            setSentencePurpose(SentencePurpose.UNKNOWN);
         }
     }
 }

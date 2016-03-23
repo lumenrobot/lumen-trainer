@@ -3,10 +3,9 @@
         <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{upConversation.clientName}}
-        <ion-icon [name]="upConversation.clientGender == 'MALE' ? 'man' : 'woman'" item-left></ion-icon>
-        {{upConversation.clientAge}} <ion-icon name="download"></ion-icon></ion-title>
+        <ion-icon [name]="upConversation.clientGender == 'MALE' ? 'man' : 'woman'" item-left></ion-icon> {{upConversation.clientAge}}</ion-title>
   <ion-buttons end>
-      <button title="Receive client message..." (click)="receiveClientMessage()"><ion-icon name="download"></ion-icon></button>
+      <button title="Receive client message..." (click)="receiveClientMessage()"><ion-icon name="create"></ion-icon></button>
   </ion-buttons>
 </ion-navbar>
 
@@ -31,10 +30,13 @@
                 <ion-card style="margin: 0; background: #ccccff">
                     <ion-card-content style="padding-top: 0; padding-bottom: 0">
                         <ion-item style="background: #ccccff; padding: 0; margin: 0">
-                            {{message.bodyText}}
-                            <small class="item-note" item-right style="color: #888888">
+                            <p style="font-size: 100%">{{message.bodyText}}</p>
+                            <p class="item-note" item-right style="color: #888888">
+                                <ion-icon [name]="purposeIcons[message.sentencePurpose]"></ion-icon>
+                                <img [src]="'img/emojione/' + emotionIcons[message.emotionKind] + '.png'"
+                                    style="display: inline; width: 1.5em; height: 1.5em"/>
                                 {{message.creationTimeObj | date:'short'}}
-                            </small>
+                            </p>
                         </ion-item>
                     </ion-card-content>
                 </ion-card>
@@ -45,9 +47,10 @@
 
 <ion-toolbar position="bottom">
     <div>
-        <ion-input type="text" [(ngModel)]="form.response.bodyText" placeholder="Type message..." (keypress)="responseKeyPress($event)"></ion-input>
+        <ion-input id="responseInput" #responseInput type="text"
+            [(ngModel)]="form.response.bodyText" placeholder="Type message..." (keypress)="responseKeyPress($event)"></ion-input>
     </div>
     <ion-buttons end>
-        <button><ion-icon name="send"></ion-icon></button>
+        <button (click)="sendMessage()"><ion-icon name="send"></ion-icon></button>
     </ion-buttons>
 </ion-toolbar>

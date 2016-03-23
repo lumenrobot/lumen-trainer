@@ -1,0 +1,34 @@
+<ion-toolbar>
+  <ion-title>Add Conversation</ion-title>
+  <ion-buttons start>
+    <button (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-buttons end>
+    <button (click)="send()">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+        <ion-label floating>Client Name</ion-label>
+        <ion-input id="conversationClientName" type="text" [(ngModel)]="conversation.clientName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Client Gender</ion-label>
+        <ion-select [(ngModel)]="conversation.clientGender">
+            <ion-option value="UNKNOWN"></ion-option>
+            <ion-option value="MALE">Male</ion-option>
+            <ion-option value="FEMALE">Female</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Client Age</ion-label>
+        <ion-input type="number" min="1" max="150" [(ngModel)]="conversation.clientAge"></ion-input>
+      </ion-item>
+  </ion-list>
+</ion-content>

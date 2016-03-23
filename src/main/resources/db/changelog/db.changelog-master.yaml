@@ -195,3 +195,24 @@ databaseChangeLog:
             tableName: sampleconversation
             columns:
               - name: casestatus
+  - changeSet:
+      id: sentencepurpose
+      author: ceefour
+      changes:
+        - sql:
+            "CREATE TYPE sentencepurpose AS enum ('UNKNOWN', 'DECLARATIVE', 'INTERROGATIVE', 'IMPERATIVE', 'EXCLAMATORY')"
+        - addColumn:
+            schemaName: lumen
+            tableName: samplemessage
+            columns:
+              name: sentencepurpose
+              type: sentencepurpose
+              defaultValue: UNKNOWN
+              constraints:
+                nullable: false
+        - createIndex:
+            indexName: ik_sampleconversation_sentencepurpose
+            schemaName: lumen
+            tableName: samplemessage
+            columns:
+              - name: sentencepurpose

@@ -1,0 +1,48 @@
+<ion-toolbar>
+  <ion-title>Respond to Client</ion-title>
+  <ion-buttons start>
+    <button (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-buttons end>
+    <button (click)="send()">
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+        <ion-label floating>Message</ion-label>
+        <ion-input id="respondModalBodyText" type="text" [(ngModel)]="response.bodyText"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Purpose</ion-label>
+        <ion-select [(ngModel)]="response.sentencePurpose">
+            <ion-option value="UNKNOWN"></ion-option>
+            <ion-option value="DECLARATIVE">Declarative (inform)</ion-option>
+            <ion-option value="INTERROGATIVE">Interrogative (ask?)</ion-option>
+            <ion-option value="IMPERATIVE">Imperative (instruct)</ion-option>
+            <ion-option value="EXCLAMATORY">Exclamatory (express emotion)</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Emotion</ion-label>
+        <ion-select [(ngModel)]="response.emotionKind">
+            <ion-option value="NEUTRAL">Neutral</ion-option>
+            <option disabled>──────────</option>
+            <ion-option value="JOY">Joy</ion-option>
+            <ion-option value="TRUST">Trust</ion-option>
+            <ion-option value="FEAR">Fear</ion-option>
+            <ion-option value="SURPRISE">Surprise</ion-option>
+            <option disabled>──────────</option>
+            <ion-option value="SADNESS">Sadness</ion-option>
+            <ion-option value="DISGUST">Disgust</ion-option>
+            <ion-option value="ANGER">Anger</ion-option>
+            <ion-option value="ANTICIPATION">Anticipation</ion-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+</ion-content>
