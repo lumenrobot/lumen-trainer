@@ -1,5 +1,6 @@
 package org.lskk.lumen.trainer.core;
 
+import com.google.common.base.MoreObjects;
 import org.hibernate.annotations.*;
 import org.hibernate.annotations.Parameter;
 import org.joda.time.DateTime;
@@ -131,5 +132,20 @@ public class SampleMessage implements Serializable {
         if (null == sentencePurpose) {
             setSentencePurpose(SentencePurpose.UNKNOWN);
         }
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this).omitNullValues()
+                .add("id", id)
+                .add("conversation", conversation != null ? conversation.getId() : null)
+                .add("creationTime", creationTime)
+                .add("timeZone", timeZone)
+                .add("emotionKind", emotionKind)
+                .add("actor", actor)
+                .add("inLanguage", inLanguage)
+                .add("bodyText", bodyText)
+                .add("sentencePurpose", sentencePurpose)
+                .toString();
     }
 }

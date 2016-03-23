@@ -15,6 +15,9 @@
         [style]="'color: ' + (item.clientGender == 'MALE' ? 'blue' : 'magenta')" item-left></ion-icon>
       {{item.clientName}} {{item.clientAge}}
       <ion-badge item-right [hidden]="item.caseStatus != 'NEED_ASSISTANT_RESPONSE'">1</ion-badge>
+      <ion-icon item-right name="checkmark" [hidden]="item.caseStatus != 'ASSISTANT_RESPONDED'"></ion-icon>
+      <ion-icon item-right name="timer" [hidden]="item.caseStatus != 'NEED_CLIENT_RESPONSE'"></ion-icon>
+      <ion-icon item-right name="square" [hidden]="item.caseStatus != 'RESOLVED'"></ion-icon>
     </button>
   </ion-list>
   <div *ngIf="selectedItem" padding>

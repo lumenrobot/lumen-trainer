@@ -382,7 +382,10 @@ export class ConversationShowPage {
     ngAfterViewInit() {
         this.reloadMessages();
         this.app.getComponent('responseInput').setFocus();
-        window.setTimeout(() => this.app.getComponent('responseInput').setFocus(), 1000);
+        window.setTimeout(() => {
+            let responseInput = this.app.getComponent('responseInput');
+            if (responseInput != null) responseInput.setFocus();
+        }, 1000);
     }
 
     reloadMessages() {
