@@ -173,6 +173,19 @@ interface SampleMessage {
     sentencePurpose?: SentencePurpose
 }
 
+var apiUri;
+if ('8100' == window.location.port) {
+    // local development mode
+    apiUri = window.location.protocol + '//' + window.location.hostname + ':8114' + '/';
+} else if ('80' == window.location.port || '443' == window.location.port) {
+    // standard deployment mode
+    apiUri = window.location.protocol + '//' + window.location.hostname + '/';
+} else {
+    // custom deployment mode
+    apiUri = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/';
+}
+console.info('API URI:', apiUri);
+
 @Page({
     templateUrl: 'build/pages/conversation/conversationadd-modal.html'
 })
@@ -241,12 +254,14 @@ export class ConversationListPage {
     constructor(private http: Http, private nav: NavController, navParams: NavParams) {
         // If we navigated to this page, we will have an item available as a nav param
         this.selectedItem = navParams.get('item');
-
+    }
+    
+    onPageWillEnter() {
         this.reloadConversations();
     }
     
     reloadConversations() {
-        this.http.get('http://localhost:8114/sampleConversations')
+        this.http.get(apiUri + 'sampleConversations')
             .map(res => res.json())
             .subscribe(data => this.items = data._embedded.sampleConversations, 
                 err => console.error(err), () => console.info('sampleConversations loaded', this.items));
@@ -267,7 +282,7 @@ export class ConversationListPage {
         modal.onDismiss(conversation => {
             if (conversation != null) {
                 var json = JSON.stringify(conversation);
-                this.http.post('http://localhost:8114/sampleConversations', json,
+                this.http.post(apiUri + 'sampleConversations', json,
                         {headers: new Headers({'Content-Type': 'application/json'})})
                     .subscribe(data => { console.info('Posted SampleConversation:', data); }, 
                         err => console.error(err),
@@ -427,7 +442,7 @@ export class ConversationShowPage {
                             bodyText: data.bodyText
                         };
                         var json = JSON.stringify(clientMessage);
-                        this.http.post('http://localhost:8114/sampleMessages', json,
+                        this.http.post(apiUri + 'process/sampleMessages', json,
                                 {headers: new Headers({'Content-Type': 'application/json'})})
                             .subscribe(data => { console.info('Posted SampleMessage:', data); this.form.response.bodyText = null; }, 
                                 err => console.error(err),
@@ -452,7 +467,7 @@ export class ConversationShowPage {
                 response.conversation = this.conversation._links.self.href;
                 response.actor = ChatActor.ASSISTANT;
                 var json = JSON.stringify(response);
-                this.http.post('http://localhost:8114/sampleMessages', json,
+                this.http.post(apiUri + 'process/sampleMessages', json,
                         {headers: new Headers({'Content-Type': 'application/json'})})
                     .subscribe(data => { console.info('Posted:', data); this.form.response.bodyText = null; }, 
                         err => console.error(err),
