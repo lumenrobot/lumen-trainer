@@ -25,7 +25,7 @@ public class TrainerController {
     private SampleMessageRepository sampleMessageRepo;
 
     @RequestMapping(method = RequestMethod.POST, path = "sampleMessages")
-    public Resource<SampleMessage> addSampleMessage(@RequestBody Resource<SampleMessage> res) {
+    public Resource<SampleMessage> addSampleMessage(Resource<SampleMessage> res) {
         SampleMessage sampleMessage = res.getContent();
         log.info("Saving {}", sampleMessage);
         sampleMessage = sampleMessageRepo.save(sampleMessage);
