@@ -1,0 +1,589 @@
+{
+	"id": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+	"name": "Lumen Trainer",
+	"description": "",
+	"order": [
+		"81463f2e-94ba-898e-c3bd-4e5bb7317575",
+		"77af6831-92ba-64da-f6c1-0c16cffcac0d",
+		"16f8276e-ec0b-d1d3-438f-ff9ab19d3e3e",
+		"6c1b5366-cddc-acd4-61e6-573b53221998",
+		"89991efe-4341-7131-5d1b-af8060ef50bb"
+	],
+	"folders": [],
+	"timestamp": 1458639608613,
+	"owner": "23923",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "16f8276e-ec0b-d1d3-438f-ff9ab19d3e3e",
+			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: 0c0fc560-2c73-3d8c-97d3-ce0206450e41\n",
+			"url": "http://localhost:8114/sampleMessages",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458648350236,
+			"name": "Add sampleMessage: Assistant: selamat malam",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 51,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 22 Mar 2016 12:05:56 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Location",
+							"key": "Location",
+							"value": "http://localhost:8114/sampleMessages/16",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"creationTime\" : \"2016-03-22T12:05:56.868Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"emotionKind\" : \"JOY\",\r\n  \"actor\" : \"ASSISTANT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"bodyText\" : \"Iya, selamat malam :)\",\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/16\"\r\n    },\r\n    \"sampleMessage\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/16\"\r\n    },\r\n    \"conversation\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/16/conversation\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "5959e83a-c7e9-ab60-4e2f-dcd5c5d97d3a",
+					"name": "added",
+					"request": {
+						"url": "http://localhost:8114/sampleMessages",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Cache-Control",
+								"type": "text",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"type": "text",
+								"name": "Postman-Token",
+								"value": "f67a1fb3-2a32-6475-155f-a34d221e4528"
+							}
+						],
+						"data": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"ASSISTANT\",\n    \"bodyText\": \"Iya, selamat malam :)\",\n    \"emotionKind\": \"JOY\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"ASSISTANT\",\n    \"bodyText\": \"Iya, selamat malam :)\",\n    \"emotionKind\": \"JOY\"\n}"
+		},
+		{
+			"id": "6c1b5366-cddc-acd4-61e6-573b53221998",
+			"headers": "Cache-Control: no-cache\nPostman-Token: e97747a0-4bed-9e8d-ab35-454fe96adc6c\n",
+			"url": "http://localhost:8114/sampleConversations/3",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458668743184,
+			"name": "Get sampleConversation 3",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 61,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 22 Mar 2016 17:45:03 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"creationTime\" : \"2016-03-22T11:42:10.849Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"clientName\" : \"Julia\",\r\n  \"clientGender\" : \"FEMALE\",\r\n  \"clientAge\" : 32,\r\n  \"initiator\" : \"CLIENT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"caseStatus\" : \"NEED_ASSISTANT_RESPONSE\",\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/3\"\r\n    },\r\n    \"sampleConversation\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/3\"\r\n    },\r\n    \"messages\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/3/messages\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "1bc9cbf7-7d4b-0868-e4a3-9b953edd1624",
+					"name": "Julia/F/32",
+					"request": {
+						"url": "http://localhost:8114/sampleConversations/3",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "e97747a0-4bed-9e8d-ab35-454fe96adc6c"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "77af6831-92ba-64da-f6c1-0c16cffcac0d",
+			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: d53da94f-1f1a-6b69-e33a-d7a95d4c4343\n",
+			"url": "http://localhost:8114/sampleMessages",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458647849531,
+			"name": "Add sampleMessage: Julia: hi",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 40,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 22 Mar 2016 11:54:13 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Location",
+							"key": "Location",
+							"value": "http://localhost:8114/sampleMessages/9",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"creationTime\" : \"2016-03-22T11:54:13.274Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"emotionKind\" : \"NEUTRAL\",\r\n  \"actor\" : \"CLIENT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"bodyText\" : \"hai\",\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/9\"\r\n    },\r\n    \"sampleMessage\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/9\"\r\n    },\r\n    \"conversation\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/9/conversation\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "7a09e34a-5474-8126-0d9c-93acbc12f61f",
+					"name": "Julia says hi",
+					"request": {
+						"url": "http://localhost:8114/sampleMessages",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Cache-Control",
+								"type": "text",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"type": "text",
+								"name": "Postman-Token",
+								"value": "ed894d62-b171-d456-ca10-e4bb49a2d442"
+							}
+						],
+						"data": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"CLIENT\",\n    \"bodyText\": \"hai\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"CLIENT\",\n    \"bodyText\": \"hai\"\n}"
+		},
+		{
+			"id": "81463f2e-94ba-898e-c3bd-4e5bb7317575",
+			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: ca9a2f5e-ce53-b999-ce2a-eaf57ff90bcb\n",
+			"url": "http://localhost:8114/sampleConversations",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458647311387,
+			"name": "Add sampleConversation: Cinta/F/18",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 294,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 22 Mar 2016 11:42:11 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Location",
+							"key": "Location",
+							"value": "http://localhost:8114/sampleConversations/3",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"creationTime\" : \"2016-03-22T11:42:10.849Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"clientName\" : \"Julia\",\r\n  \"clientGender\" : \"FEMALE\",\r\n  \"clientAge\" : 32,\r\n  \"initiator\" : \"CLIENT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/3\"\r\n    },\r\n    \"sampleConversation\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/3\"\r\n    },\r\n    \"messages\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/3/messages\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "9370d68d-9b64-5643-c706-f0fb59c74e0c",
+					"name": "Julia/FEMALE/32",
+					"request": {
+						"url": "http://localhost:8114/sampleConversations",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "e67c7577-19c4-6b37-ae0d-813126a1f9c4"
+							}
+						],
+						"data": "{\n    \"clientName\": \"Julia\",\n    \"clientGender\": \"FEMALE\",\n    \"clientAge\": 32\n}",
+						"method": "POST",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 61,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 22 Mar 2016 11:47:32 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Location",
+							"key": "Location",
+							"value": "http://localhost:8114/sampleConversations/5",
+							"description": "Used in redirection, or when a new resource has been created."
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"creationTime\" : \"2016-03-22T11:47:32.511Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"clientName\" : \"Cinta\",\r\n  \"clientGender\" : \"FEMALE\",\r\n  \"clientAge\" : 18,\r\n  \"initiator\" : \"CLIENT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/5\"\r\n    },\r\n    \"sampleConversation\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/5\"\r\n    },\r\n    \"messages\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/5/messages\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "7b062433-88d6-415d-51aa-70a10a3ad836",
+					"name": "Cinta/F/18",
+					"request": {
+						"url": "http://localhost:8114/sampleConversations",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Cache-Control",
+								"type": "text",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"type": "text",
+								"name": "Postman-Token",
+								"value": "ca9a2f5e-ce53-b999-ce2a-eaf57ff90bcb"
+							}
+						],
+						"data": "{\n    \"clientName\": \"Cinta\",\n    \"clientGender\": \"FEMALE\",\n    \"clientAge\": 18\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n    \"clientName\": \"Cinta\",\n    \"clientGender\": \"FEMALE\",\n    \"clientAge\": 18\n}"
+		},
+		{
+			"id": "89991efe-4341-7131-5d1b-af8060ef50bb",
+			"headers": "",
+			"url": "http://localhost:8114/sampleConversations/3/messages",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get sampleConversation 3's messages",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458668378533,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 97,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 22 Mar 2016 17:39:19 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"_embedded\" : {\r\n    \"sampleMessages\" : [ {\r\n      \"creationTime\" : \"2016-03-22T12:05:56.868Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"JOY\",\r\n      \"actor\" : \"ASSISTANT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"Iya, selamat malam :)\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8114/sampleMessages/16\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8114/sampleMessages/16\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8114/sampleMessages/16/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-22T12:05:03.797Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"hai\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8114/sampleMessages/14\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8114/sampleMessages/14\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8114/sampleMessages/14/conversation\"\r\n        }\r\n      }\r\n    } ]\r\n  },\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/3/messages\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "d649aa9a-816c-dd57-fe82-1584826a80a0",
+					"name": "sampleMessages",
+					"request": {
+						"url": "http://localhost:8114/sampleConversations/3/messages",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "57b8e763-0dac-d256-45f5-bba501cefa2b"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
