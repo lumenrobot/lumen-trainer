@@ -7,7 +7,9 @@
 		"77af6831-92ba-64da-f6c1-0c16cffcac0d",
 		"16f8276e-ec0b-d1d3-438f-ff9ab19d3e3e",
 		"6c1b5366-cddc-acd4-61e6-573b53221998",
-		"89991efe-4341-7131-5d1b-af8060ef50bb"
+		"89991efe-4341-7131-5d1b-af8060ef50bb",
+		"8d7f5a79-26c6-feb0-800e-eb6be0cf6579",
+		"e39a3632-7cc5-f819-8f27-f3b9b29a7982"
 	],
 	"folders": [],
 	"timestamp": 1458639608613,
@@ -28,7 +30,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1458648350236,
+			"time": 1458759158689,
 			"name": "Add sampleMessage: Assistant: selamat malam",
 			"description": "",
 			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
@@ -117,7 +119,7 @@
 					}
 				}
 			],
-			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"ASSISTANT\",\n    \"bodyText\": \"Iya, selamat malam :)\",\n    \"emotionKind\": \"JOY\"\n}"
+			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"ASSISTANT\",\n    \"bodyText\": \"Iya, selamat malam :)\",\n    \"sentencePurpose\": \"DECLARATIVE\",\n    \"emotionKind\": \"JOY\"\n}"
 		},
 		{
 			"id": "6c1b5366-cddc-acd4-61e6-573b53221998",
@@ -224,91 +226,7 @@
 			"name": "Add sampleMessage: Julia: hi",
 			"description": "",
 			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
-			"responses": [
-				{
-					"status": "",
-					"responseCode": {
-						"code": 201,
-						"name": "Created",
-						"detail": "The request has been fulfilled and resulted in a new resource being created."
-					},
-					"time": 40,
-					"headers": [
-						{
-							"name": "Content-Type",
-							"key": "Content-Type",
-							"value": "application/hal+json;charset=UTF-8",
-							"description": "The mime type of this content"
-						},
-						{
-							"name": "Date",
-							"key": "Date",
-							"value": "Tue, 22 Mar 2016 11:54:13 GMT",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"name": "Location",
-							"key": "Location",
-							"value": "http://localhost:8114/sampleMessages/9",
-							"description": "Used in redirection, or when a new resource has been created."
-						},
-						{
-							"name": "Server",
-							"key": "Server",
-							"value": "Apache-Coyote/1.1",
-							"description": "A name for the server"
-						},
-						{
-							"name": "Transfer-Encoding",
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						}
-					],
-					"cookies": [],
-					"mime": "",
-					"text": "{\r\n  \"creationTime\" : \"2016-03-22T11:54:13.274Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"emotionKind\" : \"NEUTRAL\",\r\n  \"actor\" : \"CLIENT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"bodyText\" : \"hai\",\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/9\"\r\n    },\r\n    \"sampleMessage\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/9\"\r\n    },\r\n    \"conversation\" : {\r\n      \"href\" : \"http://localhost:8114/sampleMessages/9/conversation\"\r\n    }\r\n  }\r\n}",
-					"language": "javascript",
-					"rawDataType": "text",
-					"previewType": "html",
-					"searchResultScrolledTo": -1,
-					"forceNoPretty": false,
-					"write": true,
-					"empty": false,
-					"failed": false,
-					"state": {
-						"size": "normal"
-					},
-					"id": "7a09e34a-5474-8126-0d9c-93acbc12f61f",
-					"name": "Julia says hi",
-					"request": {
-						"url": "http://localhost:8114/sampleMessages",
-						"headers": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"enabled": true,
-								"description": "The mime type of this content"
-							},
-							{
-								"key": "Cache-Control",
-								"type": "text",
-								"name": "Cache-Control",
-								"value": "no-cache"
-							},
-							{
-								"key": "Postman-Token",
-								"type": "text",
-								"name": "Postman-Token",
-								"value": "ed894d62-b171-d456-ca10-e4bb49a2d442"
-							}
-						],
-						"data": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"CLIENT\",\n    \"bodyText\": \"hai\"\n}",
-						"method": "POST",
-						"dataMode": "raw"
-					}
-				}
-			],
+			"responses": [],
 			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"CLIENT\",\n    \"bodyText\": \"hai\"\n}"
 		},
 		{
@@ -584,6 +502,331 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {}
+		},
+		{
+			"id": "8d7f5a79-26c6-feb0-800e-eb6be0cf6579",
+			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: d53da94f-1f1a-6b69-e33a-d7a95d4c4343\n",
+			"url": "http://localhost:8114/process/sampleMessages",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458759073778,
+			"name": "Add sampleMessage via Process: client says hai",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 1325,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 23 Mar 2016 18:48:22 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"creationTime\" : \"2016-03-23T18:48:21.987Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"emotionKind\" : \"NEUTRAL\",\r\n  \"actor\" : \"CLIENT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"bodyText\" : \"hai\",\r\n  \"sentencePurpose\" : \"UNKNOWN\"\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "e51c23dd-3f85-d5f8-eef9-8a49cf065c4a",
+					"name": "added",
+					"request": {
+						"url": "http://localhost:8114/process/sampleMessages",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Cache-Control",
+								"type": "text",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"type": "text",
+								"name": "Postman-Token",
+								"value": "e9cafd80-76c0-8155-d40a-e7bc9170eaa9"
+							}
+						],
+						"data": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"CLIENT\",\n    \"bodyText\": \"hai\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"CLIENT\",\n    \"bodyText\": \"hai\"\n}"
+		},
+		{
+			"id": "e39a3632-7cc5-f819-8f27-f3b9b29a7982",
+			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: d53da94f-1f1a-6b69-e33a-d7a95d4c4343\n",
+			"url": "http://localhost:8114/process/sampleMessages",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458759120819,
+			"name": "Add sampleMessage via Process: assistant says selamat malam",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 1325,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 23 Mar 2016 18:48:22 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"creationTime\" : \"2016-03-23T18:48:21.987Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"emotionKind\" : \"NEUTRAL\",\r\n  \"actor\" : \"CLIENT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"bodyText\" : \"hai\",\r\n  \"sentencePurpose\" : \"UNKNOWN\"\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "e1476c51-7aee-5f69-0d03-f23f9e24dfc6",
+					"name": "added",
+					"request": {
+						"url": "http://localhost:8114/process/sampleMessages",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Cache-Control",
+								"type": "text",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"type": "text",
+								"name": "Postman-Token",
+								"value": "e9cafd80-76c0-8155-d40a-e7bc9170eaa9"
+							}
+						],
+						"data": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"CLIENT\",\n    \"bodyText\": \"hai\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 1111,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 23 Mar 2016 18:52:18 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"creationTime\" : \"2016-03-23T18:52:18.251Z\",\r\n  \"timeZone\" : \"Asia/Jakarta\",\r\n  \"emotionKind\" : \"JOY\",\r\n  \"actor\" : \"ASSISTANT\",\r\n  \"inLanguage\" : \"id-ID\",\r\n  \"bodyText\" : \"Iya, selamat malam :)\",\r\n  \"sentencePurpose\" : \"DECLARATIVE\"\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "8a984ffa-987a-8852-1205-887e8842d928",
+					"name": "added",
+					"request": {
+						"url": "http://localhost:8114/process/sampleMessages",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "Cache-Control",
+								"type": "text",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"type": "text",
+								"name": "Postman-Token",
+								"value": "1fd2875f-e5fd-1fad-0b31-4508c19b3bd2"
+							}
+						],
+						"data": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"ASSISTANT\",\n    \"bodyText\": \"Iya, selamat malam :)\",\n    \"sentencePurpose\": \"DECLARATIVE\",\n    \"emotionKind\": \"JOY\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"ASSISTANT\",\n    \"bodyText\": \"Iya, selamat malam :)\",\n    \"sentencePurpose\": \"DECLARATIVE\",\n    \"emotionKind\": \"JOY\"\n}"
 		}
 	]
 }
