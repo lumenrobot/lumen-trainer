@@ -1,5 +1,6 @@
 package org.lskk.lumen.trainer.mvc;
 
+import com.google.common.base.Preconditions;
 import org.lskk.lumen.trainer.core.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,9 +26,10 @@ public class TrainerController {
     private SampleMessageRepository sampleMessageRepo;
 
     @RequestMapping(method = RequestMethod.POST, path = "sampleMessages")
-    public Resource<SampleMessage> addSampleMessage(Resource<SampleMessage> res) {
-        SampleMessage sampleMessage = res.getContent();
-        log.info("Saving {}", sampleMessage);
+    public Resource<SampleMessage> addSampleMessage(@RequestBody Resource<SampleMessage> res) {
+        SampleMessage sampleMessage = Preconditions.checkNotNull(res.getContent(),
+                "Cannot add null sampleMessage: %s", res);
+        log.info("Saving SampleMessage: {}", sampleMessage);
         sampleMessage = sampleMessageRepo.save(sampleMessage);
         SampleConversation conversation = sampleMessage.getConversation();
         if (ChatActor.CLIENT == sampleMessage.getActor()) {

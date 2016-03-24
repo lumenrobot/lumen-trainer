@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams, IonicApp, Content, Alert, Modal, ViewController} from 'ionic-angular';
-import {Http, Headers} from 'angular2/http';
+import {Http, Headers, URLSearchParams} from 'angular2/http';
 import 'rxjs/Rx';
 
 enum Gender {
@@ -261,7 +261,8 @@ export class ConversationListPage {
     }
     
     reloadConversations() {
-        this.http.get(apiUri + 'sampleConversations')
+        this.http.get(apiUri + 'sampleConversations/search/findTopUnresponded', 
+                {search: 'size=200'})
             .map(res => res.json())
             .subscribe(data => this.items = data._embedded.sampleConversations, 
                 err => console.error(err), () => console.info('sampleConversations loaded', this.items));

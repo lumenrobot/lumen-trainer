@@ -216,3 +216,18 @@ databaseChangeLog:
             tableName: samplemessage
             columns:
               - name: sentencepurpose
+  - changeSet:
+      id: sampleconversationex
+      author: ceefour
+      changes:
+        - createView:
+            schemaName: lumen
+            viewName: sampleconversationex
+            replaceIfExists: true
+            selectQuery: |
+              WITH lastresponsetimes AS (SELECT conversation_id, MAX(creationtime) lastresponsetime FROM lumen.samplemessage WHERE actor='ASSISTANT' GROUP BY conversation_id)
+              SELECT sc.id, lrt.lastresponsetime, COUNT(sm.id) AS unrespondedcount
+              FROM lumen.sampleconversation sc
+                  LEFT JOIN lastresponsetimes lrt ON lrt.conversation_id=sc.id
+                  LEFT JOIN lumen.samplemessage sm ON sm.conversation_id=sc.id and sm.actor='CLIENT' AND (sm.creationtime>=lrt.lastresponsetime or lrt.lastresponsetime is null)
+              GROUP BY sc.id, lrt.lastresponsetime

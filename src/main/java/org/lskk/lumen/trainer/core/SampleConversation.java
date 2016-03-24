@@ -20,6 +20,7 @@ import java.util.List;
  * Created by ceefour on 22/03/2016.
  */
 @Entity
+@SecondaryTable(name = "sampleconversationex")
 public class SampleConversation implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -44,6 +45,12 @@ public class SampleConversation implements Serializable {
             "WHEN 'NEED_CLIENT_RESPONSE' THEN 1\n" +
             "WHEN 'ASSISTANT_RESPONDED' THEN 2 ELSE 99 END")
     private Integer caseOrder;
+    @Column(table = "sampleconversationex", columnDefinition = "timestamp with time zone",
+            insertable = false, updatable = false)
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    private DateTime lastResponseTime;
+    @Column(table = "sampleconversationex", insertable = false, updatable = false)
+    private Long unrespondedCount;
 
     @OneToMany(mappedBy = "conversation")
     @OrderBy("creationTime ASC")
@@ -150,6 +157,14 @@ public class SampleConversation implements Serializable {
 
     public Integer getCaseOrder() {
         return caseOrder;
+    }
+
+    public DateTime getLastResponseTime() {
+        return lastResponseTime;
+    }
+
+    public Long getUnrespondedCount() {
+        return unrespondedCount;
     }
 
     @Override

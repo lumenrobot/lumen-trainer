@@ -10,14 +10,14 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="#item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.clientGender == 'MALE' ? 'man' : 'woman'"
-        [style]="'color: ' + (item.clientGender == 'MALE' ? 'blue' : 'magenta')" item-left></ion-icon>
-      {{item.clientName}} {{item.clientAge}}
-      <ion-badge item-right [hidden]="item.caseStatus != 'NEED_ASSISTANT_RESPONSE'">1</ion-badge>
-      <ion-icon item-right name="checkmark" [hidden]="item.caseStatus != 'ASSISTANT_RESPONDED'"></ion-icon>
-      <ion-icon item-right name="timer" [hidden]="item.caseStatus != 'NEED_CLIENT_RESPONSE'"></ion-icon>
-      <ion-icon item-right name="square" [hidden]="item.caseStatus != 'RESOLVED'"></ion-icon>
+    <button ion-item *ngFor="#conversation of items" (click)="itemTapped($event, conversation)">
+      <ion-icon [name]="conversation.clientGender == 'MALE' ? 'man' : 'woman'"
+        [style]="'color: ' + (conversation.clientGender == 'MALE' ? 'blue' : 'magenta')" item-left></ion-icon>
+      {{conversation.clientName}} {{conversation.clientAge}}
+      <ion-badge item-right [hidden]="conversation.caseStatus != 'NEED_ASSISTANT_RESPONSE'">{{conversation.unrespondedCount}}</ion-badge>
+      <ion-icon item-right name="checkmark" [hidden]="conversation.caseStatus != 'ASSISTANT_RESPONDED'"></ion-icon>
+      <ion-icon item-right name="timer" [hidden]="conversation.caseStatus != 'NEED_CLIENT_RESPONSE'"></ion-icon>
+      <ion-icon item-right name="square" [hidden]="conversation.caseStatus != 'RESOLVED'"></ion-icon>
     </button>
   </ion-list>
   <div *ngIf="selectedItem" padding>
