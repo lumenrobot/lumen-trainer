@@ -16,7 +16,7 @@ import javax.inject.Inject;
  * Created by ceefour on 22/03/2016.
  */
 @RestController
-@RequestMapping("process")
+@RequestMapping("api/process")
 public class TrainerController {
     private static final Logger log = LoggerFactory.getLogger(TrainerController.class);
 

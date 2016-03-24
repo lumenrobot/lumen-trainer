@@ -176,13 +176,13 @@ interface SampleMessage {
 var apiUri;
 if ('8100' == window.location.port) {
     // local development mode
-    apiUri = window.location.protocol + '//' + window.location.hostname + ':8114' + '/';
+    apiUri = window.location.protocol + '//' + window.location.hostname + ':8284' + '/api/';
 } else if ('80' == window.location.port || '443' == window.location.port) {
     // standard deployment mode
-    apiUri = window.location.protocol + '//' + window.location.hostname + '/';
+    apiUri = window.location.protocol + '//' + window.location.hostname + '/api/';
 } else {
     // custom deployment mode
-    apiUri = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/';
+    apiUri = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api/';
 }
 console.info('API URI:', apiUri);
 

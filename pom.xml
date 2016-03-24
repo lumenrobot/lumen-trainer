@@ -143,6 +143,10 @@
                     <exclude>**/*.java</exclude>
                 </excludes>
             </resource>
+			<resource>
+				<directory>mobile/www</directory>
+				<targetPath>static</targetPath>
+			</resource>
         </resources>
         <testResources>
             <testResource>

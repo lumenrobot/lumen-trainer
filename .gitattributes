@@ -51,3 +51,6 @@
 *.7z binary
 *.ttf binary
 *.pyc binary
+
+# Windows rsync needs this so always edit as LF
+*.sh lf
