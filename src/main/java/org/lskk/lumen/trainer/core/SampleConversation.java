@@ -40,6 +40,10 @@ public class SampleConversation implements Serializable {
     @Type(type = "org.jadira.usertype.corejava.PersistentEnumAsPostgreSQLEnum",
             parameters = {@Parameter(name = "enumClass", value = "org.lskk.lumen.trainer.core.CaseStatus")})
     private CaseStatus caseStatus;
+    @Formula("CASE casestatus WHEN 'NEED_ASSISTANT_RESPONSE' THEN 0\n" +
+            "WHEN 'NEED_CLIENT_RESPONSE' THEN 1\n" +
+            "WHEN 'ASSISTANT_RESPONDED' THEN 2 ELSE 99 END")
+    private Integer caseOrder;
 
     @OneToMany(mappedBy = "conversation")
     @OrderBy("creationTime ASC")
@@ -142,6 +146,10 @@ public class SampleConversation implements Serializable {
         if (null == caseStatus) {
             setCaseStatus(CaseStatus.NEED_ASSISTANT_RESPONSE);
         }
+    }
+
+    public Integer getCaseOrder() {
+        return caseOrder;
     }
 
     @Override
