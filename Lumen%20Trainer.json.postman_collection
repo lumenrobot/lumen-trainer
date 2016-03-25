@@ -9,7 +9,13 @@
 		"6c1b5366-cddc-acd4-61e6-573b53221998",
 		"89991efe-4341-7131-5d1b-af8060ef50bb",
 		"8d7f5a79-26c6-feb0-800e-eb6be0cf6579",
-		"e39a3632-7cc5-f819-8f27-f3b9b29a7982"
+		"e39a3632-7cc5-f819-8f27-f3b9b29a7982",
+		"6350f7c8-4c8b-67a2-3bae-8c5ee173322f",
+		"65765142-3680-e4d2-5e16-95cd5c8a209d",
+		"b487c6cd-bb9b-3858-80da-00d9b8430748",
+		"d93f078b-89c7-00a2-7078-03bbaea4be4b",
+		"97dc15e2-6a28-0751-8d82-9ace6e75a93d",
+		"3576eac7-e23d-786c-24bd-7cb11002c578"
 	],
 	"folders": [],
 	"timestamp": 1458639608613,
@@ -120,6 +126,274 @@
 				}
 			],
 			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"ASSISTANT\",\n    \"bodyText\": \"Iya, selamat malam :)\",\n    \"sentencePurpose\": \"DECLARATIVE\",\n    \"emotionKind\": \"JOY\"\n}"
+		},
+		{
+			"id": "3576eac7-e23d-786c-24bd-7cb11002c578",
+			"headers": "",
+			"url": "http://localhost:8284/api/sampleMessages/search/findAllByConversationId?conversationId=7&sort=creationTime,desc&page=0&size=50",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"data": null,
+			"dataMode": "params",
+			"name": "sampleMessages/search/findAllByConversationId",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458889563797,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 27,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Fri, 25 Mar 2016 07:05:41 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"_embedded\" : {\r\n    \"sampleMessages\" : [ {\r\n      \"creationTime\" : \"2016-03-24T16:36:07.513Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"SADNESS\",\r\n      \"actor\" : \"ASSISTANT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"bingungnya kenapa?\",\r\n      \"sentencePurpose\" : \"INTERROGATIVE\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/49\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/49\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/49/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T16:35:38.645Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"aku binguuuung\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/48\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/48\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/48/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:14:58.981Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"SADNESS\",\r\n      \"actor\" : \"ASSISTANT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"iya kenapa, cerita dong?\",\r\n      \"sentencePurpose\" : \"INTERROGATIVE\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/47\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/47\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/47/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:14:15.789Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"aku sebel\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/46\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/46\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/46/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:13:26.571Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"pacarku tidak bertanggungjawab\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/45\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/45\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/45/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:13:20.946Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"aku bingung\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/44\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/44\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/44/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:12:52.640Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"tolong\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/43\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/43\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/43/conversation\"\r\n        }\r\n      }\r\n    } ]\r\n  },\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8284/api/sampleMessages/search/findAllByConversationId?conversationId=7&sort=creationTime,desc&page=0&size=50\"\r\n    }\r\n  },\r\n  \"page\" : {\r\n    \"size\" : 50,\r\n    \"totalElements\" : 7,\r\n    \"totalPages\" : 1,\r\n    \"number\" : 0\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "e797b931-9d04-09a6-2cd6-df9b18b6836d",
+					"name": "?conversationId=7&sort=creationTime,desc&page=0&size=50",
+					"request": {
+						"url": "http://localhost:8284/api/sampleMessages/search/findAllByConversationId?conversationId=7&sort=creationTime,desc&page=0&size=50",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "4c59473f-c293-46f8-9dbd-708a56e55aea"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "6350f7c8-4c8b-67a2-3bae-8c5ee173322f",
+			"headers": "",
+			"url": "http://localhost:8284/api/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458889235757,
+			"name": "Root API",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 34,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 24 Mar 2016 16:33:58 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"_links\" : {\r\n    \"sampleConversations\" : {\r\n      \"href\" : \"http://localhost:8114/api/sampleConversations{?page,size,sort}\",\r\n      \"templated\" : true\r\n    },\r\n    \"sampleMessages\" : {\r\n      \"href\" : \"http://localhost:8114/api/sampleMessages{?page,size,sort}\",\r\n      \"templated\" : true\r\n    },\r\n    \"profile\" : {\r\n      \"href\" : \"http://localhost:8114/api/profile\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "4fe2a6f7-1b35-42eb-a94f-3b45afa94fcb",
+					"name": "root API",
+					"request": {
+						"url": "http://localhost:8114/api/",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "17fca1f6-6bd2-b05c-417e-03561a98143c"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "65765142-3680-e4d2-5e16-95cd5c8a209d",
+			"headers": "",
+			"url": "http://localhost:8284/api/sampleConversations",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458889650496,
+			"name": "List sampleConversations",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 18,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Fri, 25 Mar 2016 07:11:12 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"_embedded\" : {\r\n    \"sampleConversations\" : [ {\r\n      \"creationTime\" : \"2016-03-23T14:57:56.864Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Zaskia\",\r\n      \"clientGender\" : \"FEMALE\",\r\n      \"clientAge\" : 25,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"NEED_ASSISTANT_RESPONSE\",\r\n      \"caseOrder\" : 0,\r\n      \"lastResponseTime\" : null,\r\n      \"unrespondedCount\" : 0,\r\n      \"id\" : 6,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/6\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/6\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/6/messages\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-22T11:42:10.849Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Julia\",\r\n      \"clientGender\" : \"FEMALE\",\r\n      \"clientAge\" : 32,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"ASSISTANT_RESPONDED\",\r\n      \"caseOrder\" : 2,\r\n      \"lastResponseTime\" : null,\r\n      \"unrespondedCount\" : 0,\r\n      \"id\" : 3,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/3\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/3\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/3/messages\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-22T11:47:32.511Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Cinta\",\r\n      \"clientGender\" : \"FEMALE\",\r\n      \"clientAge\" : 18,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"NEED_CLIENT_RESPONSE\",\r\n      \"caseOrder\" : 1,\r\n      \"lastResponseTime\" : null,\r\n      \"unrespondedCount\" : 0,\r\n      \"id\" : 5,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/5\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/5\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/5/messages\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-22T11:45:09.873Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Anto\",\r\n      \"clientGender\" : \"MALE\",\r\n      \"clientAge\" : 25,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"NEED_ASSISTANT_RESPONSE\",\r\n      \"caseOrder\" : 0,\r\n      \"lastResponseTime\" : null,\r\n      \"unrespondedCount\" : 0,\r\n      \"id\" : 4,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/4\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/4\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/4/messages\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:01:52.179Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Nala\",\r\n      \"clientGender\" : \"FEMALE\",\r\n      \"clientAge\" : 20,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"NEED_CLIENT_RESPONSE\",\r\n      \"caseOrder\" : 1,\r\n      \"lastResponseTime\" : \"2016-03-24T16:36:07.513Z\",\r\n      \"unrespondedCount\" : 0,\r\n      \"id\" : 7,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/7\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/7\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleConversations/7/messages\"\r\n        }\r\n      }\r\n    } ]\r\n  },\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8284/api/sampleConversations\"\r\n    },\r\n    \"profile\" : {\r\n      \"href\" : \"http://localhost:8284/api/profile/sampleConversations\"\r\n    },\r\n    \"search\" : {\r\n      \"href\" : \"http://localhost:8284/api/sampleConversations/search\"\r\n    }\r\n  },\r\n  \"page\" : {\r\n    \"size\" : 20,\r\n    \"totalElements\" : 5,\r\n    \"totalPages\" : 1,\r\n    \"number\" : 0\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "4392ac73-335f-9d64-3320-24deb46d2d69",
+					"name": "_embedded.sampleConversations",
+					"request": {
+						"url": "http://localhost:8284/api/sampleConversations",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "61a37f19-15fe-fef1-3bfc-341c3566f501"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
 		},
 		{
 			"id": "6c1b5366-cddc-acd4-61e6-573b53221998",
@@ -416,18 +690,20 @@
 		{
 			"id": "89991efe-4341-7131-5d1b-af8060ef50bb",
 			"headers": "",
-			"url": "http://localhost:8114/sampleConversations/3/messages",
-			"pathVariables": {},
+			"url": "http://localhost:8284/api/sampleConversations/7/messages",
 			"preRequestScript": null,
+			"pathVariables": {},
 			"method": "GET",
-			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
 			"data": null,
 			"dataMode": "params",
-			"name": "Get sampleConversation 3's messages",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1458668378533,
 			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458888980701,
+			"name": "Get sampleConversation's messages (not pageable)",
+			"description": "",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
 			"responses": [
 				{
 					"status": "",
@@ -497,11 +773,77 @@
 						"method": "GET",
 						"dataMode": "params"
 					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 33,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Fri, 25 Mar 2016 06:56:22 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"_embedded\" : {\r\n    \"sampleMessages\" : [ {\r\n      \"creationTime\" : \"2016-03-24T15:12:52.640Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"tolong\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/43\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/43\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/43/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:13:20.946Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"aku bingung\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/44\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/44\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/44/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:13:26.571Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"pacarku tidak bertanggungjawab\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/45\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/45\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/45/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:14:15.789Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"aku sebel\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/46\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/46\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/46/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T15:14:58.981Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"SADNESS\",\r\n      \"actor\" : \"ASSISTANT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"iya kenapa, cerita dong?\",\r\n      \"sentencePurpose\" : \"INTERROGATIVE\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/47\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/47\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/47/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T16:35:38.645Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"NEUTRAL\",\r\n      \"actor\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"aku binguuuung\",\r\n      \"sentencePurpose\" : \"UNKNOWN\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/48\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/48\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/48/conversation\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-24T16:36:07.513Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"emotionKind\" : \"SADNESS\",\r\n      \"actor\" : \"ASSISTANT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"bodyText\" : \"bingungnya kenapa?\",\r\n      \"sentencePurpose\" : \"INTERROGATIVE\",\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/49\"\r\n        },\r\n        \"sampleMessage\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/49\"\r\n        },\r\n        \"conversation\" : {\r\n          \"href\" : \"http://localhost:8284/api/sampleMessages/49/conversation\"\r\n        }\r\n      }\r\n    } ]\r\n  },\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8284/api/sampleConversations/7/messages\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "4d4a83cb-b8e5-d03b-5bc3-c88f10e2e327",
+					"name": "sampleConversations/7/messages",
+					"request": {
+						"url": "http://localhost:8284/api/sampleConversations/7/messages",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "c8f1f9ef-1f92-650a-eb5a-5fb39605b462"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
 				}
-			],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
+			]
 		},
 		{
 			"id": "8d7f5a79-26c6-feb0-800e-eb6be0cf6579",
@@ -619,9 +961,279 @@
 			"rawModeData": "{\n    \"conversation\": \"/sampleConversations/3\",\n    \"actor\": \"CLIENT\",\n    \"bodyText\": \"hai\"\n}"
 		},
 		{
+			"id": "97dc15e2-6a28-0751-8d82-9ace6e75a93d",
+			"headers": "",
+			"url": "http://localhost:8284/api/sampleMessages/search",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"data": null,
+			"dataMode": "params",
+			"name": "sampleMessages/search",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458889272931,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 17,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Fri, 25 Mar 2016 07:00:58 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"_links\" : {\r\n    \"findAllByConversationId\" : {\r\n      \"href\" : \"http://localhost:8284/api/sampleMessages/search/findAllByConversationId{?page,size,sort}\",\r\n      \"templated\" : true\r\n    },\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8284/api/sampleMessages/search\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "6f7db6d6-fa9d-cdfa-ed44-c1a8feee4a33",
+					"name": "_links",
+					"request": {
+						"url": "http://localhost:8284/api/sampleMessages/search",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "c54c7398-4489-f554-a188-5be409ed60e7"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b487c6cd-bb9b-3858-80da-00d9b8430748",
+			"headers": "",
+			"url": "http://localhost:8114/sampleConversations/search",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"data": null,
+			"dataMode": "params",
+			"name": "sampleConversations/search",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458806795658,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 29,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 24 Mar 2016 08:05:23 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"_links\" : {\r\n    \"findTop200OrderByCaseOrderAndCreationTime\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/search/findTop200OrderByCaseOrderAndCreationTime{?page,size,sort}\",\r\n      \"templated\" : true\r\n    },\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/search\"\r\n    }\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "6f095c1a-3a70-67f7-5605-c9b2bfd5c848",
+					"name": "search methods",
+					"request": {
+						"url": "http://localhost:8114/sampleConversations/search",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "8a0b53a7-24b5-288d-d37a-6389670fd4af"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "d93f078b-89c7-00a2-7078-03bbaea4be4b",
+			"headers": "",
+			"url": "http://localhost:8114/sampleConversations/search/findTopUnresponded",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
+			"data": null,
+			"dataMode": "params",
+			"name": "findTopUnresponded sampleConversations",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458831483016,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 174,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 24 Mar 2016 14:57:32 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"_embedded\" : {\r\n    \"sampleConversations\" : [ {\r\n      \"creationTime\" : \"2016-03-23T14:57:56.864Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Zaskia\",\r\n      \"clientGender\" : \"FEMALE\",\r\n      \"clientAge\" : 25,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"NEED_ASSISTANT_RESPONSE\",\r\n      \"caseOrder\" : 0,\r\n      \"lastResponseTime\" : null,\r\n      \"unrespondedCount\" : 1,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/6\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/6\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/6/messages\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-22T11:47:32.511Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Cinta\",\r\n      \"clientGender\" : \"FEMALE\",\r\n      \"clientAge\" : 18,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"NEED_CLIENT_RESPONSE\",\r\n      \"caseOrder\" : 1,\r\n      \"lastResponseTime\" : \"2016-03-23T19:38:39.121Z\",\r\n      \"unrespondedCount\" : 0,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/5\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/5\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/5/messages\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-22T11:42:10.849Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Julia\",\r\n      \"clientGender\" : \"FEMALE\",\r\n      \"clientAge\" : 32,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"ASSISTANT_RESPONDED\",\r\n      \"caseOrder\" : 2,\r\n      \"lastResponseTime\" : \"2016-03-23T19:08:38.271Z\",\r\n      \"unrespondedCount\" : 0,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/3\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/3\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/3/messages\"\r\n        }\r\n      }\r\n    }, {\r\n      \"creationTime\" : \"2016-03-22T11:45:09.873Z\",\r\n      \"timeZone\" : \"Asia/Jakarta\",\r\n      \"clientName\" : \"Anto\",\r\n      \"clientGender\" : \"MALE\",\r\n      \"clientAge\" : 25,\r\n      \"initiator\" : \"CLIENT\",\r\n      \"inLanguage\" : \"id-ID\",\r\n      \"caseStatus\" : \"ASSISTANT_RESPONDED\",\r\n      \"caseOrder\" : 2,\r\n      \"lastResponseTime\" : \"2016-03-23T19:16:40.035Z\",\r\n      \"unrespondedCount\" : 0,\r\n      \"_links\" : {\r\n        \"self\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/4\"\r\n        },\r\n        \"sampleConversation\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/4\"\r\n        },\r\n        \"messages\" : {\r\n          \"href\" : \"http://localhost:8114/sampleConversations/4/messages\"\r\n        }\r\n      }\r\n    } ]\r\n  },\r\n  \"_links\" : {\r\n    \"self\" : {\r\n      \"href\" : \"http://localhost:8114/sampleConversations/search/findTopUnresponded\"\r\n    }\r\n  },\r\n  \"page\" : {\r\n    \"size\" : 20,\r\n    \"totalElements\" : 4,\r\n    \"totalPages\" : 1,\r\n    \"number\" : 0\r\n  }\r\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "c2f91ab7-22f8-ccec-6e89-e5ebee03b84a",
+					"name": "page 0",
+					"request": {
+						"url": "http://localhost:8114/sampleConversations/search/findTopUnresponded",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "2ddf54a5-9dc9-a314-03f5-429ab126831b"
+							}
+						],
+						"data": "",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
 			"id": "e39a3632-7cc5-f819-8f27-f3b9b29a7982",
-			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: d53da94f-1f1a-6b69-e33a-d7a95d4c4343\n",
-			"url": "http://localhost:8114/process/sampleMessages",
+			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: 1fd2875f-e5fd-1fad-0b31-4508c19b3bd2\n",
+			"url": "http://localhost:8284/api/process/sampleMessages",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -630,7 +1242,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1458759120819,
+			"time": 1458891279878,
 			"name": "Add sampleMessage via Process: assistant says selamat malam",
 			"description": "",
 			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",

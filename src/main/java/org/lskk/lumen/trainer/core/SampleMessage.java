@@ -1,5 +1,7 @@
 package org.lskk.lumen.trainer.core;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 import org.hibernate.annotations.*;
 import org.hibernate.annotations.Parameter;
@@ -43,6 +45,7 @@ public class SampleMessage implements Serializable {
             parameters = {@Parameter(name = "enumClass", value = "org.lskk.lumen.trainer.core.SentencePurpose")})
     private SentencePurpose sentencePurpose;
 
+    @JsonIgnore
     public Long getId() {
         return id;
     }
@@ -50,6 +53,9 @@ public class SampleMessage implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @JsonProperty("id")
+    public Long getThingId() { return id; }
 
     public DateTime getCreationTime() {
         return creationTime;

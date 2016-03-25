@@ -395,20 +395,25 @@ export class ConversationShowPage {
                 () => console.info('sampleConversation loaded', this.conversation));
     }
     
-    ngAfterViewInit() {
-        this.reloadMessages();
+    refocusInput() {
         this.app.getComponent('responseInput').setFocus();
         window.setTimeout(() => {
             let responseInput = this.app.getComponent('responseInput');
             if (responseInput != null) responseInput.setFocus();
-        }, 1000);
+        }, 700);
+    }
+    
+    ngAfterViewInit() {
+        this.reloadMessages();
+        this.refocusInput();
     }
 
     reloadMessages() {
-        this.http.get(this.upConversation._links.messages.href)
+        this.http.get(apiUri + 'sampleMessages/search/findAllByConversationId',
+            {search: 'conversationId=' + this.upConversation.id + '&sort=creationTime,desc&page=0&size=50'})
             .map(res => res.json())
             .subscribe(data => {
-                this.messages = data._embedded.sampleMessages;
+                this.messages = (data._embedded.sampleMessages as SampleMessage[]).reverse();
                 this.messages.forEach(x => x.creationTimeObj = new Date(x.creationTime));
             }, 
                 err => console.error(err),
@@ -445,9 +450,15 @@ export class ConversationShowPage {
                         var json = JSON.stringify(clientMessage);
                         this.http.post(apiUri + 'process/sampleMessages', json,
                                 {headers: new Headers({'Content-Type': 'application/json'})})
-                            .subscribe(data => { console.info('Posted SampleMessage:', data); this.form.response.bodyText = null; }, 
+                            .map(res => res.json())
+                            .subscribe(data => { 
+                                console.info('Posted SampleMessage:', data);
+                                data.creationTimeObj = new Date(data.creationTime); 
+                                this.messages.push(data); 
+                                this.form.response.bodyText = null; 
+                            }, 
                                 err => console.error(err),
-                                () => this.reloadMessages());
+                                () => this.refocusInput());
                     }
                 },
             ]
@@ -470,9 +481,15 @@ export class ConversationShowPage {
                 var json = JSON.stringify(response);
                 this.http.post(apiUri + 'process/sampleMessages', json,
                         {headers: new Headers({'Content-Type': 'application/json'})})
-                    .subscribe(data => { console.info('Posted:', data); this.form.response.bodyText = null; }, 
+                    .map(res => res.json())
+                    .subscribe(data => {
+                        console.info('Posted:', data);
+                        data.creationTimeObj = new Date(data.creationTime); 
+                        this.messages.push(data); 
+                        this.form.response.bodyText = null; 
+                    }, 
                         err => console.error(err),
-                        () => this.reloadMessages());
+                        () => this.refocusInput());
             }
         });
         this.nav.present(modal);
