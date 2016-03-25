@@ -396,6 +396,10 @@ export class ConversationShowPage {
     }
     
     refocusInput() {
+        var messagesContent = this.app.getComponent('messagesContent') as Content;
+        if (null != messagesContent) {
+            messagesContent.scrollTo(0, messagesContent.getContentDimensions().contentHeight, 700);
+        }
         this.app.getComponent('responseInput').setFocus();
         window.setTimeout(() => {
             let responseInput = this.app.getComponent('responseInput');
@@ -405,7 +409,6 @@ export class ConversationShowPage {
     
     ngAfterViewInit() {
         this.reloadMessages();
-        this.refocusInput();
     }
 
     reloadMessages() {
@@ -419,8 +422,7 @@ export class ConversationShowPage {
                 err => console.error(err),
                 () => {
                     console.info('SampleConversation.messages loaded', this.messages);
-                    var messagesContent = this.app.getComponent('messagesContent') as Content;
-                    messagesContent.scrollTo(0, messagesContent.getContentDimensions().contentHeight, 700);
+                    this.refocusInput();
                 });
     }
     
