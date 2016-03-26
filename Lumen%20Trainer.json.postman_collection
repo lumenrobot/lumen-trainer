@@ -26,7 +26,7 @@
 		{
 			"id": "16f8276e-ec0b-d1d3-438f-ff9ab19d3e3e",
 			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: 0c0fc560-2c73-3d8c-97d3-ce0206450e41\n",
-			"url": "http://localhost:8114/sampleMessages",
+			"url": "http://localhost:8284/api/sampleMessages",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -36,7 +36,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1458759158689,
+			"time": 1458973075728,
 			"name": "Add sampleMessage: Assistant: selamat malam",
 			"description": "",
 			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
@@ -398,7 +398,7 @@
 		{
 			"id": "6c1b5366-cddc-acd4-61e6-573b53221998",
 			"headers": "Cache-Control: no-cache\nPostman-Token: e97747a0-4bed-9e8d-ab35-454fe96adc6c\n",
-			"url": "http://localhost:8114/sampleConversations/3",
+			"url": "http://localhost:8284/api/sampleConversations/3",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -408,7 +408,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1458668743184,
+			"time": 1458973080934,
 			"name": "Get sampleConversation 3",
 			"description": "",
 			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
@@ -487,7 +487,7 @@
 		{
 			"id": "77af6831-92ba-64da-f6c1-0c16cffcac0d",
 			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: d53da94f-1f1a-6b69-e33a-d7a95d4c4343\n",
-			"url": "http://localhost:8114/sampleMessages",
+			"url": "http://localhost:8284/api/sampleMessages",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -496,7 +496,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1458647849531,
+			"time": 1458973067767,
 			"name": "Add sampleMessage: Julia: hi",
 			"description": "",
 			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
@@ -506,7 +506,7 @@
 		{
 			"id": "81463f2e-94ba-898e-c3bd-4e5bb7317575",
 			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: ca9a2f5e-ce53-b999-ce2a-eaf57ff90bcb\n",
-			"url": "http://localhost:8114/sampleConversations",
+			"url": "http://localhost:8284/api/sampleConversations",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -516,7 +516,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1458647311387,
+			"time": 1458973059128,
 			"name": "Add sampleConversation: Cinta/F/18",
 			"description": "",
 			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
@@ -848,7 +848,7 @@
 		{
 			"id": "8d7f5a79-26c6-feb0-800e-eb6be0cf6579",
 			"headers": "Content-Type: application/json\nCache-Control: no-cache\nPostman-Token: d53da94f-1f1a-6b69-e33a-d7a95d4c4343\n",
-			"url": "http://localhost:8114/process/sampleMessages",
+			"url": "http://localhost:8284/api/process/sampleMessages",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "POST",
@@ -857,7 +857,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1458759073778,
+			"time": 1458973086518,
 			"name": "Add sampleMessage via Process: client says hai",
 			"description": "",
 			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
@@ -1053,18 +1053,20 @@
 		{
 			"id": "b487c6cd-bb9b-3858-80da-00d9b8430748",
 			"headers": "",
-			"url": "http://localhost:8114/sampleConversations/search",
-			"pathVariables": {},
+			"url": "http://localhost:8284/api/sampleConversations/search",
 			"preRequestScript": null,
+			"pathVariables": {},
 			"method": "GET",
-			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
 			"data": null,
 			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458973094159,
 			"name": "sampleConversations/search",
 			"description": "",
-			"descriptionFormat": "html",
-			"time": 1458806795658,
-			"version": 2,
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
 			"responses": [
 				{
 					"status": "",
@@ -1135,26 +1137,25 @@
 						"dataMode": "params"
 					}
 				}
-			],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
+			]
 		},
 		{
 			"id": "d93f078b-89c7-00a2-7078-03bbaea4be4b",
 			"headers": "",
-			"url": "http://localhost:8114/sampleConversations/search/findTopUnresponded",
-			"pathVariables": {},
+			"url": "http://localhost:8284/api/sampleConversations/search/findTopUnresponded",
 			"preRequestScript": null,
+			"pathVariables": {},
 			"method": "GET",
-			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
 			"data": null,
 			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1458973097559,
 			"name": "findTopUnresponded sampleConversations",
 			"description": "",
-			"descriptionFormat": "html",
-			"time": 1458831483016,
-			"version": 2,
+			"collectionId": "e65072b6-85ed-c5cf-9fbc-62d9a536b097",
 			"responses": [
 				{
 					"status": "",
@@ -1225,10 +1226,7 @@
 						"dataMode": "params"
 					}
 				}
-			],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
+			]
 		},
 		{
 			"id": "e39a3632-7cc5-f819-8f27-f3b9b29a7982",
