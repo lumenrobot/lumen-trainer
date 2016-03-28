@@ -1,6 +1,6 @@
 ## Requirement
 
-For Windows, you need [Grsync](https://sourceforge.net/projects/grsync-win/).
+For Windows, you need [Grsync](https://sourceforge.net/projects/grsync-win/), because CwRsync is incompatible with Git Bash's `ssh`.
 In Linux Mint, `rsync` is built-in.
 
 ## prd Deployment Configuration
