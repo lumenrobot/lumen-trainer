@@ -183,7 +183,7 @@ Most processing are case-insensitive unless marked otherwise:
 10. Stop words: min, admin, pagi, sore, siang, malam, kak, yang, kok, koq, kan, deh
     Remove ,+./()#!?
 
-        val stopWords = Array("", ",", ".", "!", "?", "??", "???", ":(", ":)", "#", "@", "min", "admin", "pagi", "sore", "siang", "malam", "kak", "yang", "kok", "koq", "kan", "deh", "dan", "atau", "atas", "silakan", "yang", "menjadi", "sebagai", "kami", "bantu", "dahulu")
+        val stopWords = Array("", ",", ".", "!", "?", "??", "???", ":(", ":)", "#", "@", "min", "admin", "pagi", "sore", "siang", "malam", "kak", "yang", "kok", "koq", "kan", "deh", "dan", "atau", "atas", "silakan", "yang", "menjadi", "sebagai", "kami", "bantu", "dahulu", "hai")
         val inquiryRemover = (new StopWordsRemover()
             .setStopWords(stopWords)
             .setInputCol("inquirytokens")
@@ -196,6 +196,14 @@ Most processing are case-insensitive unless marked otherwise:
         tokendf10.select("inquiryfiltereds", "replyfiltereds").head(10)
 
 12. OpenNLP-tokenize then re-join using " ". This effectively does trim also. (both)
+13. Save it:
+
+        import java.io._
+        import org.apache.commons.io._
+        FileUtils.deleteDirectory(new File("telkomsel_tokenized.parquet"))
+        tokendf10.coalesce(1).write.save("telkomsel_tokenized.parquet")
+
+    Please copy to `Dropbox/Lumen/Reasoning/helpdesk`.
 
 References:
 
@@ -216,10 +224,13 @@ Now we need to convert that into feature-extracted dataset (word2vec), so each w
 
 1. Load the `tokenized` dataset
 
-        val featuredf = tokendf10
+        val featuredf = sqlContext.read.load("C:/Users/ceefour/Dropbox/Lumen/Reasoning/helpdesk/telkomsel_tokenized.parquet")
 
 2. Hashing TF
 
+        import org.apache.spark.sql.functions._
+        import org.apache.spark.ml._
+        import org.apache.spark.ml.feature._
         val inquiryHashingTF = new HashingTF().setNumFeatures(1000).setInputCol("inquiryfiltereds").setOutputCol("inquiryfeatures")
         val featuredf2 = inquiryHashingTF.transform(featuredf)
         featuredf2.select("inquiryfeatures").head()
@@ -234,7 +245,7 @@ Now we need to convert that into feature-extracted dataset (word2vec), so each w
         val labelIndexer = new StringIndexer().setInputCol("replyfiltereds").setOutputCol("replylabels").fit(featuredf)
         labelIndexer.transform(featuredf).show()
 
-3. Join reply tokens as label then index label
+3. Join reply tokens as label then index label (not working well)
         
         val joinUdf = udf((filtereds: Seq[String]) => filtereds.mkString(" "))
         val featuredf3 = featuredf2.withColumn("replylabel", joinUdf($"replyfiltereds"))
@@ -245,6 +256,36 @@ Now we need to convert that into feature-extracted dataset (word2vec), so each w
         featuredf4.count()
         labelIndexer.labels.size
         featuredf4.select("replylabel", "replyid").head(10)
+
+    Attempt just use binary classification. e.g. `terima` reply:
+
+        val joinUdf = udf((filtereds: Seq[String]) => filtereds.mkString(" "))
+        val featuredf3 = featuredf2.withColumn("replyfiltered", joinUdf($"replyfiltereds"))
+        featuredf3.select("replyfiltered").head(10)
+        val featuredf4 = (featuredf3.withColumn("terimaLabel", $"replyfiltered".like("%terima%").cast("double"))
+            .withColumn("baikLabel", $"replyfiltered".like("%baik%").cast("double"))
+            .withColumn("cekLabel", $"replyfiltered".like("%cek%").cast("double")))
+        featuredf4.select($"inquiryfiltereds", $"terimaLabel", $"baikLabel", $"cekLabel").show()
+        
+        // Split Training & Test Dataset
+        val test = featuredf4.limit(20)
+        val train = featuredf4.except(test)
+        
+        // Training
+        import org.apache.spark.ml.classification._
+        val layers = Array[Int](1000, 20, 2)
+        val terimaTrainer = (new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setMaxIter(50)
+            .setFeaturesCol("inquiryfeatures").setLabelCol("terimaLabel"))
+        val terimaModel = terimaTrainer.fit(train).setPredictionCol("terimaPrediction")
+        val baikTrainer = (new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setMaxIter(50)
+            .setFeaturesCol("inquiryfeatures").setLabelCol("baikLabel"))
+        val baikModel = baikTrainer.fit(train).setPredictionCol("baikPrediction")
+        val cekTrainer = (new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setMaxIter(50)
+            .setFeaturesCol("inquiryfeatures").setLabelCol("cekLabel"))
+        val cekModel = cekTrainer.fit(train).setPredictionCol("cekPrediction")
+        // Test!
+        val predicted = cekModel.transform(baikModel.transform(terimaModel.transform(test)))
+        predicted.select("inquiryfiltereds", "replyfiltered", "terimaLabel", "terimaPrediction", "baikLabel", "baikPrediction", "cekLabel", "cekPrediction").show()
 
 ## Training the Model
 
