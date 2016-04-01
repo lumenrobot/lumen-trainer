@@ -202,6 +202,12 @@ References:
 * http://spark.apache.org/docs/latest/ml-guide.html
 * https://spark.apache.org/docs/latest/ml-features.html
 
+### TODO: Try doing binary classification on each of the reply labels instead
+
+Yes, this means you'll train 1000 NN models for 1000 labels (reply words).
+But make a proof of concept with, say, 3 labels. So you have 2^3 = 8 possible combinations. If you can get 100% accurate
+for 3 labels, then you're good :)
+
 ### Extract Features/Vectorize the Dataset
 
 I try to mimic: Vinyals, O., Le, Q. (2015). [A neural conversational model](http://arxiv.org/pdf/1506.05869v1.pdf). arXiv preprint arXiv:1506.05869.
