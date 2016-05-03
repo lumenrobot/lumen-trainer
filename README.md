@@ -256,7 +256,7 @@ Now we need to convert that into feature-extracted dataset (word2vec), so each w
         val featuredf2 = inquiryHashingTF.transform(featuredf)
         featuredf2.select("inquiryfiltereds", "inquiryfeatures").head()
         
-    Previous attempt with hashingTF labels (not working):
+    Not working: Previous attempt with hashingTF labels:
 
         val inquiryHashingTF = new HashingTF().setNumFeatures(1000).setInputCol("inquiryfiltereds").setOutputCol("inquiryfeatures")
         val replyHashingTF = new HashingTF().setNumFeatures(1000).setInputCol("replyfiltereds").setOutputCol("replylabels")
@@ -266,7 +266,7 @@ Now we need to convert that into feature-extracted dataset (word2vec), so each w
         val labelIndexer = new StringIndexer().setInputCol("replyfiltereds").setOutputCol("replylabels").fit(featuredf)
         labelIndexer.transform(featuredf).show()
 
-3. Join reply tokens as label then index label (not working well)
+3. Not working well: Join reply tokens as label then index label
         
         val joinUdf = udf((filtereds: Seq[String]) => filtereds.mkString(" "))
         val featuredf3 = featuredf2.withColumn("replylabel", joinUdf($"replyfiltereds"))
@@ -278,7 +278,7 @@ Now we need to convert that into feature-extracted dataset (word2vec), so each w
         labelIndexer.labels.size
         featuredf4.select("replylabel", "replyid").head(10)
 
-    Attempt just use binary classification for X top reply words/labels:
+    Not working well: Attempt just use binary classification for X top reply words/labels:
 
         val labelExploded = featuredf2.select(explode($"replyfiltereds").alias("replylabel"))
         labelExploded.show()
@@ -287,7 +287,7 @@ Now we need to convert that into feature-extracted dataset (word2vec), so each w
         labelIndexer.labels
         println(labelIndexer.labels.mkString(" "))
 
-    Attempt just use binary classification. e.g. `terima` reply:
+    Use this for now: Attempt just use binary classification. e.g. `terima` reply:
 
         val joinUdf = udf((filtereds: Seq[String]) => filtereds.mkString(" "))
         val featuredf3 = featuredf2.withColumn("replyfiltered", joinUdf($"replyfiltereds"))
